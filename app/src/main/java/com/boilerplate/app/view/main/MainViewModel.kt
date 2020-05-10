@@ -9,8 +9,8 @@ import com.boilerplate.app.view.Error
 import com.boilerplate.app.view.Pending
 import com.boilerplate.app.view.Success
 import com.boilerplate.app.view.ViewModelEvent
-import com.boilerplate.app.view.domain.repository.SampleLocalRepository
-import com.boilerplate.app.view.domain.repository.SampleRemoteRepository
+import com.boilerplate.app.domain.repository.SampleLocalRepository
+import com.boilerplate.app.domain.repository.SampleRemoteRepository
 
 class MainViewModel(
     private val sampleRemoteRepository: SampleRemoteRepository,

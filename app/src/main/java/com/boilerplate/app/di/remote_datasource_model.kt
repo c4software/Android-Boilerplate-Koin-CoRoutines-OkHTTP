@@ -1,7 +1,7 @@
-package com.boilerplate.app.view.di
+package com.boilerplate.app.di
 
 import com.boilerplate.app.BuildConfig
-import com.boilerplate.app.view.data.remote.SampleRemoteDataSource
+import com.boilerplate.app.data.remote.SampleRemoteDataSource
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.dsl.module

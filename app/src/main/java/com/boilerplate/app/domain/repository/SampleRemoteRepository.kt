@@ -1,6 +1,6 @@
-package com.boilerplate.app.view.domain.repository
+package com.boilerplate.app.domain.repository
 
-import com.boilerplate.app.view.data.remote.SampleRemoteDataSource
+import com.boilerplate.app.data.remote.SampleRemoteDataSource
 import io.reactivex.Single
 import java.util.concurrent.TimeUnit
 

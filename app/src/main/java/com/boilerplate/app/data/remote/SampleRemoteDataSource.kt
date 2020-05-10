@@ -1,4 +1,4 @@
-package com.boilerplate.app.view.data.remote
+package com.boilerplate.app.data.remote
 
 import io.reactivex.Single
 import retrofit2.http.GET

@@ -1,11 +1,11 @@
-package com.boilerplate.app.view.di
+package com.boilerplate.app.di
 
 import com.boilerplate.app.utils.coroutines.ApplicationSchedulerProvider
 import com.boilerplate.app.utils.coroutines.SchedulerProvider
-import com.boilerplate.app.view.domain.repository.SampleLocalRepository
-import com.boilerplate.app.view.domain.repository.SampleLocalRepositoryImpl
-import com.boilerplate.app.view.domain.repository.SampleRemoteRepository
-import com.boilerplate.app.view.domain.repository.SampleRemoteRemoteRepositoryImpl
+import com.boilerplate.app.domain.repository.SampleLocalRepository
+import com.boilerplate.app.domain.repository.SampleLocalRepositoryImpl
+import com.boilerplate.app.domain.repository.SampleRemoteRepository
+import com.boilerplate.app.domain.repository.SampleRemoteRemoteRepositoryImpl
 import com.boilerplate.app.view.main.MainViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module

@@ -1,20 +1,18 @@
 package com.boilerplate.app.domain.repository
 
 import com.boilerplate.app.data.remote.SampleRemoteDataSource
-import io.reactivex.Single
-import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.delay
 
 interface SampleRemoteRepository {
-    fun ping(): Single<String>
+    suspend fun ping(): String
 }
 
 class SampleRemoteRemoteRepositoryImpl(private val sampleRemoteDataSource: SampleRemoteDataSource) :
     SampleRemoteRepository {
-    override fun ping(): Single<String> {
-        // TODO FAKE Delay
-        return Single
-            .timer(1000L, TimeUnit.MILLISECONDS)
-            .flatMap { sampleRemoteDataSource.ping() }
-            .map { "Ping Succeed" }
+
+    override suspend fun ping(): String {
+        delay(1000L)
+        sampleRemoteDataSource.ping()
+        return "Succeed Remote"
     }
 }

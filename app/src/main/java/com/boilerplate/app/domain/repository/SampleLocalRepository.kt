@@ -1,18 +1,16 @@
 package com.boilerplate.app.domain.repository
 
-import io.reactivex.Single
-import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.delay
 
 interface SampleLocalRepository {
-    fun ping(): Single<Boolean>
+    suspend fun ping(): String
 }
 
 class SampleLocalRepositoryImpl(): SampleLocalRepository{
-    override fun ping(): Single<Boolean> {
-        // TODO Fake
-        return Single
-            .timer(1000L, TimeUnit.MILLISECONDS)
-            .map { true }
+    override suspend fun ping(): String {
+        // Fake delay for demo purpose
+        delay(1000L)
+        return "Succeed Local"
     }
 }
 

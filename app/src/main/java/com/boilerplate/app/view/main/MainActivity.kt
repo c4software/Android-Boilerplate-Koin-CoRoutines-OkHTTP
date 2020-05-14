@@ -7,9 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import com.boilerplate.app.R
-import com.boilerplate.app.view.Pending
-import com.boilerplate.app.view.Error
-import com.boilerplate.app.view.Success
+import com.boilerplate.app.view.*
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -25,11 +23,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupUi() {
-        myViewModel.events.observe(this, Observer { event ->
-            when (event) {
-                is Pending -> showLoader(true)
-                is Success -> showLoader(false)
-                is Error -> showError(event.error)
+        myViewModel.states.observe(this, Observer { state ->
+            when (state) {
+                is Loading -> showLoader(true)
+                is MainViewModel.CallResult -> showLoader(false, state.data)
+                is Failed -> showError(state.error)
             }
         })
 
@@ -38,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnRemoteAction.setOnClickListener {
-            myViewModel.doLocalTestAction()
+            myViewModel.doRemoteTestAction()
         }
     }
 
@@ -50,11 +48,11 @@ class MainActivity : AppCompatActivity() {
             .create()
     }
 
-    private fun showLoader(state: Boolean) {
+    private fun showLoader(state: Boolean, receivedData: String = "") {
         if (state) {
             loader.visibility = View.VISIBLE
         } else {
-            Toast.makeText(this, "Succeed", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, receivedData, Toast.LENGTH_SHORT).show()
             loader.visibility = View.GONE
         }
     }

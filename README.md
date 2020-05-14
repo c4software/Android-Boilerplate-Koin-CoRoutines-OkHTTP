@@ -6,4 +6,4 @@ It's a minimal, logicless boilerplate, clone it, code over it. Done.
 
 Almost no extra code to remove.
 
-![Sample](./capture.png | width=200)
+<img src="./capture.png" width="300px" />

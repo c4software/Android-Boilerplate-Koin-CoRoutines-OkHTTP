@@ -51,9 +51,13 @@ class MainActivity : AppCompatActivity() {
     private fun showLoader(state: Boolean, receivedData: String = "") {
         if (state) {
             loader.visibility = View.VISIBLE
+            btnRemoteAction.visibility = View.GONE
+            btnLocalAction.visibility = View.GONE
         } else {
             Toast.makeText(this, receivedData, Toast.LENGTH_SHORT).show()
             loader.visibility = View.GONE
+            btnRemoteAction.visibility = View.VISIBLE
+            btnLocalAction.visibility = View.VISIBLE
         }
     }
 }

@@ -9,6 +9,7 @@ import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val appModule = module {
+    // Inject dependencies for the MainViewModel (the only UI in this boilerplate)
     viewModel { MainViewModel(get(), get()) }
 
     // Sample Remote Data Repository

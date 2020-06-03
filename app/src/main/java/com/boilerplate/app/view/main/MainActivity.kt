@@ -1,5 +1,7 @@
 package com.boilerplate.app.view.main
 
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,6 +14,12 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
+
+    companion object {
+        fun getStartIntent(ctx: Context): Intent {
+            return Intent(ctx, MainActivity::class.java)
+        }
+    }
 
     private val myViewModel: MainViewModel by viewModel()
 

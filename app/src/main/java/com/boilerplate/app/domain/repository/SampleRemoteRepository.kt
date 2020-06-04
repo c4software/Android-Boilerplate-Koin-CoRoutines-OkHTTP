@@ -12,7 +12,11 @@ class SampleRemoteRemoteRepositoryImpl(private val sampleRemoteDataSource: Sampl
 
     override suspend fun ping(): String {
         delay(1000L)
-        sampleRemoteDataSource.ping()
-        return "Succeed Remote"
+        val result = sampleRemoteDataSource.ping()
+        return if(result.isSuccess()) {
+            "Succeed Remote"
+        } else {
+            "Failed Remote"
+        }
     }
 }

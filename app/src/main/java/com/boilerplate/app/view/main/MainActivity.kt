@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             .setTitle("Error")
             .setMessage(error.message)
             .create()
+            .show()
     }
 
     private fun showLoader(state: Boolean, receivedData: String = "") {

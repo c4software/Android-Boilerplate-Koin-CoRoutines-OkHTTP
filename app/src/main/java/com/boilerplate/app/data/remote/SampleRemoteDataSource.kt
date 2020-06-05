@@ -6,7 +6,7 @@ import retrofit2.http.Headers
 
 interface SampleRemoteDataSource {
 
-    @GET("/info/ping?content-type=application/json")
+    @GET("info/ping?content-type=application/json")
     @Headers("Content-type: application/json")
     suspend fun ping(): PingResult
 

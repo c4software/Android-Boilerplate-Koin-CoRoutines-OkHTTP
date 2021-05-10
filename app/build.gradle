@@ -69,7 +69,8 @@ dependencies {
     androidTestImplementation "org.koin:koin-test:$koin_version"
 
     // ViewModel and LiveData
-    implementation "android.arch.lifecycle:extensions:$android_arch_version"
+
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$android_arch_version"
     testImplementation "android.arch.core:core-testing:$android_arch_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$android_arch_version"
 

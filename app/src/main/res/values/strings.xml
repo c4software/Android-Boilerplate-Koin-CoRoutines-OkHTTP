@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Boilerplate - Koin - Retrofit</string>
+    <string name="get_version">Get Version</string>
 </resources>

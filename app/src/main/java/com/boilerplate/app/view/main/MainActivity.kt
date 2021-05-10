@@ -5,12 +5,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import com.boilerplate.app.R
 import com.boilerplate.app.view.*
-import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -39,11 +40,11 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        btnLocalAction.setOnClickListener {
+        findViewById<Button>(R.id.btnLocalAction).setOnClickListener {
             myViewModel.doLocalTestAction()
         }
 
-        btnRemoteAction.setOnClickListener {
+        findViewById<Button>(R.id.btnRemoteAction).setOnClickListener {
             myViewModel.doRemoteTestAction()
         }
     }
@@ -59,14 +60,14 @@ class MainActivity : AppCompatActivity() {
 
     private fun showLoader(state: Boolean, receivedData: String = "") {
         if (state) {
-            loader.visibility = View.VISIBLE
-            btnRemoteAction.visibility = View.GONE
-            btnLocalAction.visibility = View.GONE
+            findViewById<ProgressBar>(R.id.loader).visibility = View.VISIBLE
+            findViewById<Button>(R.id.btnRemoteAction).visibility = View.GONE
+            findViewById<Button>(R.id.btnLocalAction).visibility = View.GONE
         } else {
             Toast.makeText(this, receivedData, Toast.LENGTH_SHORT).show()
-            loader.visibility = View.GONE
-            btnRemoteAction.visibility = View.VISIBLE
-            btnLocalAction.visibility = View.VISIBLE
+            findViewById<ProgressBar>(R.id.loader).visibility = View.GONE
+            findViewById<Button>(R.id.btnRemoteAction).visibility = View.VISIBLE
+            findViewById<Button>(R.id.btnLocalAction).visibility = View.VISIBLE
         }
     }
 }
